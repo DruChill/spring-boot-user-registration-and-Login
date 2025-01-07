@@ -7,10 +7,48 @@
           rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
+    <style>
+        /* Estilo para hacer que el footer quede siempre al fondo */
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        .content {
+            min-height: 80vh; /* Esto asegura que el contenido se expanda y empuje el footer hacia abajo */
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilo para hacer el formulario más estilizado */
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #343a40;
+            color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .card-body {
+            padding: 30px;
+        }
+        .form-group input {
+            border-radius: 5px;
+            box-shadow: none;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-<br /><br />
-<div class="container">
+
+<div class="container content">
     <div class="row">
         <div class="col-md-6 offset-md-3">
 
@@ -23,8 +61,8 @@
             </div>
 
             <div class="card">
-                <div class="card-header">
-                    <h2 class="text-center">NS</h2>
+                <div class="card-header text-center">
+                    <h2>NS</h2>
                 </div>
                 <div class="card-body">
                     <form method="post" role="form" th:action="@{/login}" class="form-horizontal">
@@ -50,7 +88,7 @@
 </div>
 
 <footer class="bg-dark text-white text-center py-3 mt-4">
-    <p>&copy; 2025 NS. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Three Line. Todos los derechos reservados.</p>
     <p><a href="mailto:contacto@ns.com" class="text-white">Contacto</a> | <a href="/privacy" class="text-white">Política de privacidad</a></p>
 </footer>
 
