@@ -4,7 +4,6 @@ import jakarta.validation.Valid;
 import net.enjoy.springboot.registrationlogin.dto.UserDto;
 import net.enjoy.springboot.registrationlogin.entity.User;
 import net.enjoy.springboot.registrationlogin.service.UserService;
-import net.enjoy.springboot.registrationlogin.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +24,7 @@ public class AuthController {
     }
 
     // handler method to handle home page request
-    @GetMapping("/index")
+    @GetMapping({"/", "/index"})
     public String home() {
         return "index";
     }
