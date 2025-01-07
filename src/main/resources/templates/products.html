@@ -28,7 +28,8 @@
             <thead class="table-dark">
             <tr>
                 <th>Name</th>
-                <th>Description</th>
+                <th>Brand</th>
+                <th>Size</th>
                 <th>Price</th>
                 <th>Actions</th>
             </tr>
@@ -36,7 +37,8 @@
             <tbody>
             <tr th:each="product : ${products}">
                 <td th:text="${product.name}"></td>
-                <td th:text="${product.description}"></td>
+                <td th:text="${product.brand}"></td>
+                <td th:text="${product.size}"></td>
                 <td th:text="${product.price}"></td>
                 <td>
                     <a th:href="@{/products/edit/{id}(id=${product.id})}" class="btn btn-primary">Edit</a>
