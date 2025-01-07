@@ -1,21 +1,88 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Create Product</title>
+    <title>Crear Producto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #212529;
+            color: #e9ecef;
+        }
+
+        nav.navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            color: #ffffff !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f8f9fa !important;
+        }
+
+        h1 {
+            color: #f1f1f1;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .form-group label {
+            color: #d3d3d3;
+        }
+
+        .form-control {
+            background-color: #3c3f41;
+            border: 1px solid #575c60;
+            color: #f4f4f4;
+        }
+
+        .form-control:focus {
+            background-color: #484c50;
+            border-color: #80b3ff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Product Management</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">Gestión de Productos</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Alternar navegación">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/products}">Products</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/products}">Productos</a>
                 </li>
             </ul>
         </div>
@@ -23,27 +90,33 @@
 </nav>
 <div class="container">
     <div class="row">
-        <h1>Create Product</h1>
+        <h1>Crear Producto</h1>
         <form th:action="@{/products}" th:object="${product}" method="post">
             <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name">Nombre</label>
                 <input type="text" class="form-control" id="name" th:field="*{name}">
             </div>
             <div class="form-group">
-                <label for="brand">Brand</label>
+                <label for="brand">Marca</label>
                 <input type="text" class="form-control" id="brand" th:field="*{brand}">
             </div>
             <div class="form-group">
-                <label for="size">Size</label>
+                <label for="size">Tamaño</label>
                 <input type="text" class="form-control" id="size" th:field="*{size}">
             </div>
             <div class="form-group">
-                <label for="price">Price</label>
+                <label for="price">Precio</label>
                 <input type="number" class="form-control" id="price" th:field="*{price}">
             </div>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </div>
 </div>
+
+<footer class="bg-dark text-white text-center py-3 mt-4">
+    <p>&copy; 2025 Three Line. Todos los derechos reservados.</p>
+    <p><a href="mailto:contacto@ns.com" class="text-white">Contacto</a> | <a href="/privacy" class="text-white">Política de privacidad</a></p>
+</footer>
+
 </body>
 </html>
