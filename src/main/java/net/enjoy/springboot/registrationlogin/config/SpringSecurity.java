@@ -23,29 +23,32 @@ public class SpringSecurity {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-                .authorizeHttpRequests((authorize) ->
-                        authorize.requestMatchers("/register/**").permitAll()
-                                .requestMatchers("/index").permitAll()
-                                .requestMatchers("/").permitAll()
-                                .requestMatchers("/tienda").permitAll()
-                                .requestMatchers("/users").hasRole("ADMIN")
-                                .requestMatchers("/products/**").authenticated()
-                ).formLogin(
-                        form -> form
-                                .loginPage("/login")
-                                .loginProcessingUrl("/login")
-                                .defaultSuccessUrl("/products", true)
-                                .permitAll()
-                ).logout(
-                        logout -> logout
-                                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                                .permitAll()
-                );
-        return http.build();
-    }
+@Bean
+public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    http.csrf().disable()
+            .authorizeHttpRequests((authorize) ->
+                    authorize.requestMatchers("/register/**").permitAll()
+                            .requestMatchers("/index").permitAll()
+                            .requestMatchers("/").permitAll()
+                            .requestMatchers("/tienda").permitAll()
+                            .requestMatchers("/polos").permitAll()
+                            .requestMatchers("/polos/sizes").permitAll()
+                            .requestMatchers("/users").hasRole("ADMIN")
+                            .requestMatchers("/products/**").authenticated()
+            ).formLogin(
+                    form -> form
+                            .loginPage("/login")
+                            .loginProcessingUrl("/login")
+                            .defaultSuccessUrl("/products", true)
+                            .permitAll()
+            ).logout(
+                    logout -> logout
+                            .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                            .permitAll()
+            );
+    return http.build();
+}
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
