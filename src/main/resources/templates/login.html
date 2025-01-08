@@ -8,41 +8,76 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
     <style>
-        
         body, html {
             height: 100%;
             margin: 0;
         }
+
         .content {
-            min-height: 80vh; 
+            min-height: 80vh;
         }
+
         footer {
             position: fixed;
             bottom: 0;
             width: 100%;
+            background-color: #aab7b8;
+            color: black;
         }
 
-        
         .card {
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .card-header {
-            background-color: #343a40;
-            color: white;
+            background-color: #bdc3c7;
+            color: black;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
+
         .card-body {
             padding: 30px;
         }
+
         .form-group input {
             border-radius: 5px;
             box-shadow: none;
+            background-color: #f0f0f5;
+            border-color: #bdc3c7;
         }
+
+        .form-group input:focus {
+            border-color: #fadbd8;
+            box-shadow: 0 0 5px rgba(250, 219, 216, 0.5);
+        }
+
         .btn-primary {
             width: 100%;
             padding: 10px;
+            background-color: #fadbd8;
+            border: none;
+            color: black;
+        }
+
+        .btn-primary:hover {
+            background-color: #e6a9b0;
+        }
+
+        footer a {
+            color: #fadbd8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fadbd8;
+        }
+
+        @media (max-width: 767px) {
+            .card-body {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -87,7 +122,7 @@
     </div>
 </div>
 
-<footer class="bg-dark text-white text-center py-3 mt-4">
+<footer class="text-center py-3 mt-4">
     <p>&copy; 2025 Three Line. Todos los derechos reservados.</p>
     <p><a href="mailto:contacto@ns.com" class="text-white">Contacto</a> | <a href="/privacy" class="text-white">Política de privacidad</a></p>
 </footer>

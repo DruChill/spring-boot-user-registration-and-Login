@@ -1,4 +1,3 @@
-<!-- filepath: /Users/macbookair/Documents/workspace/tienda-ropa-123/src/main/resources/templates/vestidos.html -->
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -27,9 +26,49 @@
             });
         });
     </script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            color: black;
+        }
+        .navbar {
+            background-color: #d3d3d3;
+        }
+        .navbar-brand, .nav-link {
+            color: black !important;
+        }
+        .navbar-nav .nav-link.active {
+            background-color: #fadbd8;
+        }
+        .table {
+            background-color: #ffffff;
+        }
+        .table-dark {
+            background-color: #333;
+            color: black;
+        }
+        th, td {
+            color: black;
+        }
+        h1 {
+            color: black;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        footer {
+            background-color: #d3d3d3;
+            color: black;
+            padding: 10px 0;
+        }
+        .btn {
+            background-color: #fadbd8;
+            color: black;
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #d3d3d3;">
     <div class="container-fluid">
         <a class="nav-link active" aria-current="page" th:href="@{/}">Inicio</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,10 +102,10 @@
             <div class="form-group">
                 <label for="size">Tamaño</label>
                 <select class="form-control" id="size" name="size" required>
-                    <!-- Options will be populated dynamically based on the selected brand -->
+                    
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Consultar</button>
+            <button type="submit" class="btn">Consultar</button>
         </form>
         <br>
         <div th:if="${availability}">
@@ -75,13 +114,13 @@
                 <p>Marca: <span th:text="${brand}"></span></p>
                 <p>Tamaño: <span th:text="${size}"></span></p>
                 <p>Precio: <span th:text="${price}"></span></p>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#purchaseModal">Comprar</button>
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#purchaseModal">Comprar</button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Modal -->
+
 <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -115,11 +154,19 @@
                     <input type="hidden" id="productBrand" name="productBrand" th:value="${brand}">
                     <input type="hidden" id="productSize" name="productSize" th:value="${size}">
                     <input type="hidden" id="productPrice" name="productPrice" th:value="${price}">
-                    <button type="submit" class="btn btn-primary">Comprar Ahora</button>
+                    <button type="submit" class="btn">Comprar Ahora</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<footer class="text-center" style="background-color: #d3d3d3; color: black; padding: 10px 0;">
+    <p>&copy; 2025 Tres Líneas. Todos los derechos reservados.</p>
+    <p>
+        <a href="mailto:contacto@ns.com" class="text-black">Contacto</a> | 
+        <a href="/privacy" class="text-black">Política de privacidad</a>
+    </p>
+</footer>
 </body>
 </html>

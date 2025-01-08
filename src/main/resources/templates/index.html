@@ -5,32 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenidos a la tienda</title>
     <style>
-        /* borrar estos estilos es como ejemplo nomas */
-        header {
-            display: flex;
-            justify-content: space-around;
-            padding: 2rem;
-        }
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f5; 
+    color: #333; 
+}
 
-        .hero {
-            text-align: center;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #bdc3c7; 
+    color: white;
+}
 
-        .ejemplo-jorge {
-            display: flex;
-            justify-content: space-around;
-            text-decoration: none;
-            margin: 5rem;
-        }
+header img {
+    height: 50px;
+    width: auto;
+}
 
-        a {
-            text-decoration: none;
-            color: black;
-            font-size: 1.5rem;
-            background-color: antiquewhite;
-            padding: 1rem;
-            border-radius: 1rem;
-        }
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #fadbd8;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #fadbd8; 
+}
+
+.hero {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #2c3e50; 
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #7f8c8d; 
+}
+
+.ejemplo-jorge {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3rem 5%;
+    flex-wrap: wrap;
+}
+
+.ejemplo-jorge div {
+    text-align: center;
+    margin: 20px;
+}
+
+.ejemplo-jorge a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #333; 
+    background-color: #fadbd8; 
+    padding: 15px 25px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ejemplo-jorge a:hover {
+    background-color: #f5b7b1; 
+    transform: translateY(-5px);
+}
+
+.ejemplo-jorge img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+.ejemplo-jorge img:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #aab7b8; 
+    color: black;
+    padding: 20px 0;
+    margin-top: 50px;
+    text-align: center; 
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #fadbd8; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fadbd8; 
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ejemplo-jorge {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ejemplo-jorge div {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .ejemplo-jorge a {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+
+    .ejemplo-jorge img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -42,9 +168,10 @@
     </header>
     
     <div class="hero">
-        <h1>Bienvenido a la tiendita de pacheco</h1>
+        <h1>Bienvenido a la tienda NS</h1>
         <p>Explora lo que tenemos para ti!</p>
     </div>
+
     <div class="ejemplo-jorge">
         <div>
             <a th:href="@{/polos}">Polos</a>
@@ -53,5 +180,10 @@
         <a th:href="@{/pantalones}">Pantalones</a>
         <a th:href="@{/vestidos}">Vestidos</a>
     </div>
+
+    <footer class="text-center py-3 mt-4">
+        <p>&copy; 2025 Three Line. Todos los derechos reservados.</p>
+        <p><a href="mailto:contacto@ns.com" class="text-white">Contacto</a> | <a href="/privacy" class="text-white">Política de privacidad</a></p>
+    </footer>    
 </body>
 </html>

@@ -3,52 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Productos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        .content {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            flex: 1;
+            margin-top: 20px;
+        }
+        .footer-link {
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-link:hover {
+            color: #f39c12;
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Product Management</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/products/new}">Crear Producto</a>
-                </li>
-            </ul>
+    <div class="content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Product Management</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{/products/new}">Crear Producto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container main-content">
+            <div class="row">
+                <h1>Productos</h1>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Marca</th>
+                            <th>Tamaño</th>
+                            <th>Precio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="product : ${products}">
+                            <td th:text="${product.name}"></td>
+                            <td th:text="${product.brand}"></td>
+                            <td th:text="${product.size}"></td>
+                            <td th:text="${product.price}"></td>
+                            <td>
+                                <a th:href="@{/products/edit/{id}(id=${product.id})}" class="btn btn-primary" title="Editar producto">Editar</a>
+                                <a th:href="@{/products/delete/{id}(id=${product.id})}" class="btn btn-danger" title="Eliminar producto">Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</nav>
-<div class="container">
-    <div class="row">
-        <h1>Productos</h1>
-        <table class="table table-striped table-bordered table-hover">
-            <thead class="table-dark">
-            <tr>
-                <th>Name</th>
-                <th>Brand</th>
-                <th>Size</th>
-                <th>Price</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="product : ${products}">
-                <td th:text="${product.name}"></td>
-                <td th:text="${product.brand}"></td>
-                <td th:text="${product.size}"></td>
-                <td th:text="${product.price}"></td>
-                <td>
-                    <a th:href="@{/products/edit/{id}(id=${product.id})}" class="btn btn-primary">Edit</a>
-                    <a th:href="@{/products/delete/{id}(id=${product.id})}" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+
+    <footer class="text-center py-3 mt-4" style="background-color: #343a40; color: white;">
+        <p>&copy; 2025 Three Line. Todos los derechos reservados.</p>
+        <p>
+            <a href="mailto:contacto@ns.com" class="text-white footer-link">Contacto</a> | 
+            <a href="/privacy" class="text-white footer-link">Política de privacidad</a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

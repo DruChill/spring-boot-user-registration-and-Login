@@ -1,29 +1,81 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
->
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Registration and Login System</title>
+    <title>Sistema de Registro y Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
+    <style>
+        
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            background-color: #f2f2f2;
+            color: #333; 
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            flex: 1;
+            margin-top: 30px;
+        }
+        .navbar {
+            background-color: #343a40; 
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .navbar-nav .nav-link.active {
+            background-color: #fadbd8;
+        }
+        .table {
+            background-color: #ffffff;
+        }
+        .table-dark {
+            background-color: #333;
+            color: white;
+        }
+        th, td {
+            color: #333; 
+        }
+        h1 {
+            color: #343a40; 
+            margin-bottom: 20px; 
+        }
+        footer {
+            background-color: #333; 
+            color: white;
+            padding: 15px 0; 
+            text-align: center;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            color: #f39c12; 
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Registration and Login System</a>
+        <a class="navbar-brand" href="#">Sistema de Registro y Login</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/register}">Register</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/register}">Registrar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" th:href="@{/logout}">Logout</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/logout}">Cerrar sesión</a>
                 </li>
             </ul>
         </div>
@@ -31,13 +83,13 @@
 </nav>
 <div class="container">
     <div class="row">
-        <h1> Registered Users </h1>
+        <h1>Usuarios Registrados</h1>
     </div>
     <table class="table table-striped table-bordered table-hover">
         <thead class="table-dark">
         <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
             <th>Email</th>
         </tr>
         </thead>
@@ -50,5 +102,14 @@
         </tbody>
     </table>
 </div>
+<footer>
+    <p>&copy; 2025 Tres Líneas. Todos los derechos reservados.</p>
+    <p>
+        <a href="mailto:contacto@ns.com" class="text-white">Contacto</a> | 
+        <a href="/privacy" class="text-white">Política de privacidad</a>
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
