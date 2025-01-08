@@ -175,7 +175,7 @@ footer a:hover {
     
     <div class="hero">
         <h1>Bienvenido a la tienda NS</h1>
-        <p>Explora lo que tenemos para ti!</p>
+        <p><span id="element"></span></p>
     </div>
 
     <div class="ejemplo-jorge">
@@ -194,8 +194,16 @@ footer a:hover {
     </div>
 
     <footer class="">
-        <p>&copy; 2025 Three Line. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Three Line. Todos los derechos reservados. con el apoyo de Dru</p>
         <p><a href="mailto:contacto@ns.com" class="text-white">Contacto</a> | <a href="/privacy" class="text-white">Política de privacidad</a></p>
-    </footer>    
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Polos','Vestidos','Pantalones','Camisas','y muchos más','Explora lo que tenemos para ti!'],
+          typeSpeed: 70,
+            backSpeed: 50,
+        });
+      </script>
 </body>
 </html>
