@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        header {
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem;
+        }
+    </style>
 </head>
 <body>
-    <a href="/login">Administrador</a>
+    <header>
+        <img src="" alt="logo-de-la-empresa">
+        <nav>
+            <a href="/login">Administrador</a>
+        </nav>
+    </header>
+    
     <h1>Bienvenido a la tiendita de pacheco</h1>
-    <p>Explota lo que tenemos para ti!</p>
-    <a class="nav-link active" aria-current="page" th:href="@{/polos}">Polos</a>
-    <a class="nav-link active" aria-current="page" th:href="@{/pantalones}">Pantalones</a>
+    <p>Explora lo que tenemos para ti!</p>
+    <a th:href="@{/polos}">Polos</a>
+    <a th:href="@{/pantalones}">Pantalones</a>
+    <a th:href="@{/vestidos}">Vestidos</a>
 </body>
 </html>
