@@ -26,6 +26,41 @@
             });
         });
     </script>
+    
+    <style>
+        /* Hacer que el cuerpo y el HTML tengan altura completa */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Usar flexbox para hacer que el contenido se expanda y el footer se quede al final */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Esto asegura que el contenido se estire y el footer quede al fondo */
+        }
+
+        /* Asegurarse de que el pie de página esté siempre al fondo */
+        footer {
+            margin-top: auto; /* Este estilo coloca el footer al final */
+        }
+
+        /* Estilo para el footer */
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fadbd8;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #bdc3c7;">
@@ -127,8 +162,8 @@
 <footer class="text-center py-3 mt-4" style="background-color: #343a40; color: white;">
     <p>&copy; 2025 Three Line. Todos los derechos reservados.</p>
     <p>
-        <a href="mailto:contacto@ns.com" class="text-white" style="text-decoration: none; transition: color 0.3s ease;">Contacto</a> | 
-        <a href="/privacy" class="text-white" style="text-decoration: none; transition: color 0.3s ease;">Política de privacidad</a>
+        <a href="mailto:contacto@ns.com" class="text-white">Contacto</a> | 
+        <a href="/privacy" class="text-white">Política de privacidad</a>
     </p>
 </footer>
 

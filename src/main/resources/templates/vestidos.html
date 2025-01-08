@@ -30,40 +30,75 @@
         body {
             background-color: #f2f2f2;
             color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Asegura que el body tenga al menos el tamaño completo de la pantalla */
         }
+
         .navbar {
             background-color: #d3d3d3;
         }
+
         .navbar-brand, .nav-link {
             color: black !important;
         }
+
         .navbar-nav .nav-link.active {
             background-color: #fadbd8;
         }
+
         .table {
             background-color: #ffffff;
         }
+
         .table-dark {
             background-color: #333;
             color: black;
         }
+
         th, td {
             color: black;
         }
+
         h1 {
             color: black;
         }
+
         .container {
             margin-top: 30px;
+            flex-grow: 1; /* Hace que la sección principal crezca para ocupar el espacio disponible */
         }
+
         footer {
             background-color: #d3d3d3;
             color: black;
             padding: 10px 0;
+            text-align: center;
+            display: block; /* Asegura que los elementos estén uno encima del otro */
         }
+
+        footer p {
+            margin: 5px 0;
+        }
+
         .btn {
             background-color: #fadbd8;
             color: black;
+        }
+
+        footer a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fadbd8;
+        }
+
+        /* Asegura que el footer se quede al final de la página */
+        footer {
+            margin-top: auto; /* Asegura que el footer se ubique al final */
         }
     </style>
 </head>
@@ -162,9 +197,13 @@
     </div>
 </div>
 
-<footer class="d-flex justify-content-around mt-5" style="background-color: #d3d3d3; color: black; padding: 10px 0;">
+<footer class="d-flex flex-column align-items-center mt-auto" style="background-color: #d3d3d3; color: black; padding: 10px 0;">
     <p>&copy; 2025 Tres Líneas. Todos los derechos reservados.</p>
-    <p>2025 Powered by Dru</p>
+    <p>
+        <a href="" class="text-white">Contacto</a> | 
+        <a href="/privacy" class="text-white">Política de privacidad</a>
+    </p>
 </footer>
+
 </body>
 </html>
