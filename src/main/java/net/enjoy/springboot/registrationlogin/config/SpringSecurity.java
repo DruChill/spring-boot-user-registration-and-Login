@@ -35,6 +35,8 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
                             .requestMatchers("/polos/sizes").permitAll()
                             .requestMatchers("/pantalones").permitAll()
                             .requestMatchers("/pantalones/sizes").permitAll()
+                            .requestMatchers("/vestidos").permitAll()
+                            .requestMatchers("/vestidos/sizes").permitAll()
                             .requestMatchers("/users").hasRole("ADMIN")
                             .requestMatchers("/products/**").authenticated()
             ).formLogin(
