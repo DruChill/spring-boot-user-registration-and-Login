@@ -8,6 +8,34 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous">
     <style>
+        header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #bdc3c7; 
+    color: white;
+}
+
+header img {
+    height: 50px;
+    width: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #fadbd8;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #fadbd8; 
+}
+
         body, html {
             height: 100%;
             margin: 0;
@@ -82,8 +110,13 @@
     </style>
 </head>
 <body>
-
-<div class="container content">
+    <header>
+        <img src="" alt="logo-de-la-empresa">
+        <nav>
+            <a href="/">Inicio</a>
+        </nav>
+    </header>
+<div class="container content mt-5">
     <div class="row">
         <div class="col-md-6 offset-md-3">
 

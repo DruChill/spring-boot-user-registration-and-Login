@@ -59,7 +59,7 @@ nav a:hover {
 
 .ejemplo-jorge {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin: 3rem 5%;
     flex-wrap: wrap;
@@ -106,6 +106,8 @@ footer {
     padding: 20px 0;
     margin-top: 50px;
     text-align: center; 
+    display: flex;
+    justify-content: space-around;
 }
 
 footer p {
@@ -175,13 +177,19 @@ footer a:hover {
     <div class="ejemplo-jorge">
         <div>
             <a th:href="@{/polos}">Polos</a>
-            <img src="" alt="imagen-de-polos">
+            <img src="https://png.pngtree.com/png-vector/20230902/ourmid/pngtree-black-polo-shirt-mockup-hanging-png-file-png-image_9934268.png" alt="imagen-de-polos">
         </div>
-        <a th:href="@{/pantalones}">Pantalones</a>
-        <a th:href="@{/vestidos}">Vestidos</a>
+        <div>
+            <a th:href="@{/pantalones}">Pantalones</a>
+            <img src="https://png.pngtree.com/png-vector/20240407/ourmid/pngtree-transparent-background-with-blue-jeans-or-kid-jean-a-fresh-concept-png-image_12260399.png" alt="pantalones-img">
+        </div>
+        <div>
+            <a th:href="@{/vestidos}">Vestidos</a>
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/035/645/766/small_2x/ai-generated-woman-dress-isolated-on-transparent-background-created-with-generative-ai-free-png.png" alt="vestidos-img">
+        </div>
     </div>
 
-    <footer class="text-center py-3 mt-4">
+    <footer class="">
         <p>&copy; 2025 Three Line. Todos los derechos reservados.</p>
         <p><a href="mailto:contacto@ns.com" class="text-white">Contacto</a> | <a href="/privacy" class="text-white">Política de privacidad</a></p>
     </footer>    

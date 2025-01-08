@@ -49,7 +49,7 @@
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <h1>Consultar Disponibilidad de Pantalones</h1>
         <form th:action="@{/pantalones}" method="post">
@@ -65,7 +65,7 @@
                     
                 </select>
             </div>
-            <button type="submit" class="btn" style="background-color: #fadbd8; color: black;">Consultar</button>
+            <button type="submit" class="btn mt-3" style="background-color: #fadbd8; color: black;">Consultar</button>
         </form>
         <br>
         <div th:if="${availability}">
@@ -120,7 +120,7 @@
     </div>
 </div>
 
-<footer class="text-center py-3 mt-4" style="background-color: #aab7b8; color: black;">
+<footer class="py-3 mt-4 d-flex justify-content-around" style="background-color: #aab7b8; color: black;">
     <p>&copy; 2025 Three Line. Todos los derechos reservados.</p>
     <p>
         <a href="mailto:contacto@ns.com" class="text-white" style="text-decoration: none; transition: color 0.3s ease;">Contacto</a> | 
